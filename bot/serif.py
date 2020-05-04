@@ -1,0 +1,5 @@
+serif_monday = open("bot/timetable/monday.txt").read()
+serif_tuesday = open("bot/timetable/tuesday.txt").read()
+serif_wednesday = open("bot/timetable/wednesday.txt").read()
+serif_thursday = open("bot/timetable/thursday.txt").read()
+serif_friday = open("bot/timetable/friday.txt").read()
