@@ -1,1 +1,1 @@
-web: python3 manage.py
+web: gunicorn timetable_bot.wsgi bot:app --log-file -
