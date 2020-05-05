@@ -1,1 +1,1 @@
-web: gunicorn djangobot.wsgi --log-file -
+web: python3 manage.py
