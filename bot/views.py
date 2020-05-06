@@ -32,6 +32,8 @@ def reply_text(reply_token,text):
         reply = serif_friday
     elif weekday==6:
         reply = serif_monday
+    elif text=="今日":
+        reply="今日の授業は"
     else: reply = "明日は授業ないよ"
 
     payload = {
