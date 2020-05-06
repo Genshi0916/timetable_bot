@@ -29,41 +29,32 @@ HEADER = {
 def index(request):
     return HttpResponse("This is bot api.")
 
-
-
 def reply_text(reply_token,text):
-    @handler.add(MessageEvent, message=TextMessage)
-    def handle_text_message(event):
-        aaa = event.message.text
-        reply = aaa
-        # weekday = datetime.date.today().weekday()
-        # if weekday==0:
-        #     reply = serif_tuesday
-        # elif weekday==1:
-        #     reply = serif_wednesday
-        # elif weekday==2:
-        #     reply = serif_thursday
-        # elif weekday==3:
-        #     reply = serif_friday
-        # elif weekday==6:
-        #     reply = serif_monday
-        # # elif aaa =="今日":
-        # #     reply="今日の授業はまるまるです"
-        # else: reply = "明日は授業ないよ"
+    weekday = datetime.date.today().weekday()
+    if weekday==0:
+        reply = serif_tuesday
+    elif weekday==1:
+        reply = serif_wednesday
+    elif weekday==2:
+        reply = serif_thursday
+    elif weekday==3:
+        reply = serif_friday
+    elif weekday==6:
+        reply = serif_monday
+    else: reply = "明日は授業ないよ"
 
+    payload = {
+        "replyToken":reply_token,
+        "messages":[
+                {
+                    "type":"text",
+                    "text": reply
+                }
+            ]
+    }
 
-        payload = {
-            "replyToken":reply_token,
-            "messages":[
-                    {
-                        "type":"text",
-                        "text": reply
-                    }
-                ]
-        }
-
-        requests.post(REPLY_ENDPOINT,headers=HEADER,data=json.dumps(payload))
-        return reply
+    requests.post(REPLY_ENDPOINT,headers=HEADER,data=json.dumps(payload))
+    return reply
 
 def callback(request):
     reply = ""
