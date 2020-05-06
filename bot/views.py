@@ -26,7 +26,6 @@ HEADER = {
     "Authorization": "Bearer " + ACCESS_TOKEN
 }
 
-moji = event.message.text
 def index(request):
     return HttpResponse("This is bot api.")
 
