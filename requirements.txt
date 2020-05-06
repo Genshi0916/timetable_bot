@@ -3,3 +3,4 @@ django-toolbelt==0.0.1
 gunicorn==19.6.0
 psycopg2==2.8.5
 requests==2.10.0
+line-bot-sdk==1.16.0

@@ -6,7 +6,7 @@ from bot.serif import serif_tuesday
 from bot.serif import serif_wednesday
 from bot.serif import serif_thursday
 from bot.serif import serif_friday
-
+from linebot import LineBotApi, WebhookHandler
 from django.shortcuts import render
 from django.http import HttpResponse
 
@@ -32,7 +32,7 @@ def reply_text(reply_token,text):
         reply = serif_friday
     elif weekday==6:
         reply = serif_monday
-    elif text=="今日":
+    elif event.message.text=="今日":
         reply="今日の授業は"
     else: reply = "明日は授業ないよ"
 
