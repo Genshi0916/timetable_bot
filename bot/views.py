@@ -29,7 +29,7 @@ HEADER = {
 def index(request):
     return HttpResponse("This is bot api.")
 
-def reply_text(reply_token,text,event):
+def reply_text(reply_token,text):
     weekday = datetime.date.today().weekday()
 
     if weekday==0:
@@ -42,8 +42,8 @@ def reply_text(reply_token,text,event):
         reply = serif_friday
     elif weekday==6:
         reply = serif_monday
-    elif event.message.text=="今日":
-        reply="今日の授業はまるまるです"
+    # elif event.message.text=="今日":
+    #     reply="今日の授業はまるまるです"
     else: reply = "明日は授業ないよ"
 
     payload = {
