@@ -43,7 +43,7 @@ def reply_text(reply_token,text,event):
     elif weekday==6:
         reply = serif_monday
     elif event.message.text=="今日":
-        reply="今日の授業は"
+        reply="今日の授業はまるまるです"
     else: reply = "明日は授業ないよ"
 
     payload = {
