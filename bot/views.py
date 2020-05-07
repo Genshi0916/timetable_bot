@@ -20,7 +20,7 @@ from linebot.models import (
 )
 
 REPLY_ENDPOINT = 'https://api.line.me/v2/bot/message/reply'
-ACCESS_TOKEN = 'k5hVF4eV4mqRMh70Fpu1sF5GGleGYJ5/NHqPwUcOtkb/VVaY+fPN6CBlOPIOL06e1Je0Ja4H1C8e8ScQWw820SHp9eox6t/pl40tGx9ZJwRK08lfEXULijIcJFzKPIwNlEsnSLgWkx3AJJkelOOWzAdB04t89/1O/w1cDnyilFU='
+ACCESS_TOKEN = 'ここにアクセストークン'
 HEADER = {
     "Content-Type": "application/json",
     "Authorization": "Bearer " + ACCESS_TOKEN
